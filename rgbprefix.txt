@@ -1,7 +1,7 @@
 $${
 // Configuration
 &name          = "RGB Prefix"
-&command       = "prefix"
+&command       = "/prefix"
 &timer         = "1000ms"
 &colordisabled = "Red"
 &colors        = "Yellow,Aqua,Pink,Green,Red,Dark Aqua,White,Blue,Dark Green,Gray,Dark Gray"
