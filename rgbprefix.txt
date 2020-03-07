@@ -1,0 +1,41 @@
+$${
+&name = "RGB Prefix"
+
+// Configuration
+&command = "/prefix"
+&timer   = "1000ms"
+
+if(@rgb);
+    unset(@rgb)
+    log("Stopped %&name%")
+else
+    @item_count = 0
+    set(@rgb)
+    log("Started %&name% with delay of %&timer%")
+    do
+        Echo(%&command% Yellow)
+        Wait(%&timer%)
+        Echo(%&command% Aqua)
+        Wait(%&timer%)
+        Echo(%&command% Pink)
+        Wait(%&timer%)
+        Echo(%&command% Green)
+        Wait(%&timer%)
+        Echo(%&command% Red)
+        Wait(%&timer%)
+        Echo(%&command% Dark Aqua)
+        Wait(%&timer%)
+        Echo(%&command% White)
+        Wait(%&timer%)
+        Echo(%&command% Blue)
+        Wait(%&timer%)
+        Echo(%&command% Dark Green)
+        Wait(%&timer%)
+        Echo(%&command% Gray)
+        Wait(%&timer%)
+        Echo(%&command% Dark Gray)
+        Wait(%&timer%)
+    while(@rgb)
+endif;
+
+}$$
