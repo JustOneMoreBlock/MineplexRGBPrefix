@@ -8,9 +8,9 @@ While this doesn't affect gameplay. I don't see it as a bannable offense and tha
 
 Once installed you simply place the text file into your `.minecraft/mods/macro/` as `rgbprefix.txt` and make keybind for it.
 
-- Press ~ (Tilday Key)
-- Click on the `A`.
-- Select a key, I used `Home` for testing.
+- Press ~ (Tilde Key)
+- Click on the green `A`.
+- Select a key, I used `DELETE` for testing.
 - In the input field.
 
 ```
