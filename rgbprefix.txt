@@ -1,41 +1,27 @@
 $${
-&name = "RGB Prefix"
-
 // Configuration
-&command = "/prefix"
-&timer   = "1000ms"
+&name          = "RGB Prefix"
+&command       = "prefix"
+&timer         = "1000ms"
+&colordisabled = "Red"
+&colors        = "Yellow,Aqua,Pink,Green,Red,Dark Aqua,White,Blue,Dark Green,Gray,Dark Gray"
 
 if(@rgb);
-    unset(@rgb)
-    log("Stopped %&name%")
+    unset(@rgb);
+    log("Stopped %&name%");
+    Echo(%&command% %&colordisabled%);
 else
     @item_count = 0
-    set(@rgb)
-    log("Started %&name% with delay of %&timer%")
+    set(@rgb);
+    log("Started %&name% with delay of %&timer%");
+	&colors[] = split(",",%&colors%);
     do
-        Echo(%&command% Yellow)
-        Wait(%&timer%)
-        Echo(%&command% Aqua)
-        Wait(%&timer%)
-        Echo(%&command% Pink)
-        Wait(%&timer%)
-        Echo(%&command% Green)
-        Wait(%&timer%)
-        Echo(%&command% Red)
-        Wait(%&timer%)
-        Echo(%&command% Dark Aqua)
-        Wait(%&timer%)
-        Echo(%&command% White)
-        Wait(%&timer%)
-        Echo(%&command% Blue)
-        Wait(%&timer%)
-        Echo(%&command% Dark Green)
-        Wait(%&timer%)
-        Echo(%&command% Gray)
-        Wait(%&timer%)
-        Echo(%&command% Dark Gray)
-        Wait(%&timer%)
-    while(@rgb)
+    foreach(&colors,&color);
+		Echo(%&command% %&color%);
+		Wait(%&timer%);
+    	next;
+    while(@rgb);
+	endif;
 endif;
 
 }$$
