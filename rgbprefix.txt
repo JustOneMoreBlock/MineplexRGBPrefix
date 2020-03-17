@@ -9,19 +9,20 @@ $${
 if(@rgb);
     unset(@rgb);
     log("Stopped %&name%");
+    Wait(12000ms);
     Echo(%&command% %&colordisabled%);
 else
     @item_count = 0
     set(@rgb);
     log("Started %&name% with delay of %&timer%");
-	&colors[] = split(",",%&colors%);
+    &colors[] = split(",",%&colors%);
     do
     foreach(&colors,&color);
-		Echo(%&command% %&color%);
-		Wait(%&timer%);
-    	next;
+        Echo(%&command% %&color%);
+        Wait(%&timer%);
+        next;
     while(@rgb);
-	endif;
+    endif;
 endif;
 
 }$$
